@@ -16,6 +16,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="boot-loader" id="bootLoader" aria-hidden="true">
+        <div class="boot-terminal" role="status" aria-live="polite">
+            <div class="boot-head">
+                <span></span><span></span><span></span>
+                <strong>ssh://issa.dev</strong>
+            </div>
+            <div class="boot-body" id="bootBody"></div>
+            <div class="boot-progress">
+                <span id="bootBar"></span>
+            </div>
+            <div class="boot-footer">
+                <span id="bootPercent">0%</span>
+                <span id="bootCursor">_</span>
+            </div>
+        </div>
+    </div>
+
     <div class="noise"></div>
     <div class="matrix-layer" aria-hidden="true">
         <span>const</span><span>deploy</span><span>git push</span><span>sudo build</span><span>React Native</span><span>API</span><span>0101</span><span>Node</span>
@@ -72,8 +89,8 @@
                         <img src="image/profil.jpeg" alt="Portrait de Issa MIGAN">
                         <div class="scan"></div>
                     </div>
-                    <div class="floating-chip chip-one"><i data-lucide="smartphone"></i> Mobile first</div>
-                    <div class="floating-chip chip-two"><i data-lucide="terminal"></i> clean code</div>
+                    <div class="floating-chip chip-one"><i data-lucide="smartphone"></i> npm run dev</div>
+                    <div class="floating-chip chip-two"><i data-lucide="terminal"></i> whoami</div>
                 </div>
             </div>
         </section>
@@ -122,22 +139,22 @@
                     <article class="skill-card reveal">
                         <i data-lucide="layers-3"></i>
                         <h3>Frontend</h3>
-                        <p>React, React Native, Expo, HTML, CSS, JavaScript, TypeScript.</p>
+                        <p>React, React Native, Expo, HTML, CSS, JavaScript, TypeScript...</p>
                     </article>
                     <article class="skill-card reveal">
                         <i data-lucide="server"></i>
                         <h3>Backend</h3>
-                        <p>Node.js, Express, API REST, Firebase Auth, logique serveur.</p>
+                        <p>Node.js, Express, API REST, Firebase Auth, logique serveur...</p>
                     </article>
                     <article class="skill-card reveal">
                         <i data-lucide="database"></i>
                         <h3>Data</h3>
-                        <p>PostgreSQL, SQLite, Supabase, modelisation et stockage local.</p>
+                        <p>PostgreSQL, SQLite, Supabase, modelisation et stockage local...</p>
                     </article>
                     <article class="skill-card reveal">
                         <i data-lucide="wrench"></i>
                         <h3>Workflow</h3>
-                        <p>Git, GitHub, VS Code, Figma, revue de code et iteration produit.</p>
+                        <p>Git, GitHub, VS Code, Antigravity, Codex, Claude Code, Zen, OpenCode, Cursor, Kiro, Stitch, Figma, revue de code et iteration produit...</p>
                     </article>
                 </div>
             </div>
@@ -356,8 +373,46 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>© 2026 Issa MIGAN. Built in dark mode.</p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a class="logo" href="#home" aria-label="Retour a l'accueil">
+                    <span class="prompt"></span> Issa.dev
+                </a>
+                <p>Developpeur web & mobile specialise React Native. Je construis des produits propres, rapides et utiles.</p>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    disponible pour freelance
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">Profil</a></li>
+                    <li><a href="#skills">Stacks</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:miganissa334@gmail.com">miganissa334@gmail.com</a></li>
+                    <li><a href="tel:+2290156103458">+229 0156103458</a></li>
+                    <li>Cotonou, Benin</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://github.com/Issa-Mgn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+                    <a href="https://www.linkedin.com/in/issa-migan-520051362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="https://www.instagram.com/issamigan?igsh=bjI5cnRxc3IwNWpy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-row">
+                <p>© 2026 Issa MIGAN. Tous droits reserves.</p>
+                <p class="footer-cmd">$ git commit -m "build something useful"</p>
+            </div>
         </div>
     </footer>
 
@@ -378,6 +433,98 @@
 
     <script>
         lucide.createIcons();
+
+        const bootLines = [
+            { text: '# init root://kernel', delay: 150 },
+            { text: '$ mounting /secure/shell', delay: 2500 },
+            { text: '# decoding cipherkeys... ok', delay: 5500 },
+            { text: '$ bypassing firewall --bypass', delay: 8800 },
+            { text: '# accessing forbidden zone', delay: 12000 },
+            { text: '$ welcome, hacker. access granted', delay: 12400 },
+        ];
+
+        const bootLoader = document.getElementById('bootLoader');
+        const bootBody = document.getElementById('bootBody');
+        const bootBar = document.getElementById('bootBar');
+        const bootPercent = document.getElementById('bootPercent');
+        const bootCursor = document.getElementById('bootCursor');
+
+        const typeLine = (line, onDone) => {
+            const el = document.createElement('p');
+            el.className = 'boot-line';
+            bootBody.appendChild(el);
+
+            let i = 0;
+            const timer = setInterval(() => {
+                i += 1;
+                el.textContent = line.slice(0, i);
+                if (i >= line.length) {
+                    clearInterval(timer);
+                    onDone();
+                }
+            }, 45);
+        };
+
+        let progress = 0;
+        const updateProgress = (value) => {
+            progress = Math.min(100, Math.round(value));
+            bootBar.style.width = progress + '%';
+            bootPercent.textContent = progress + '%';
+        };
+
+        const finishBoot = () => {
+            updateProgress(100);
+            bootCursor.textContent = 'ACCESS GRANTED';
+            setTimeout(() => {
+                bootLoader.classList.add('hidden');
+                bootLoader.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                siteNav.classList.remove('scrolled');
+            }, 1600);
+        };
+
+        const runBoot = () => {
+            bootBody.innerHTML = '';
+            bootBar.style.width = '0%';
+            bootPercent.textContent = '0%';
+            bootCursor.textContent = '_';
+            bootLoader.classList.remove('hidden');
+            bootLoader.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+
+            let doneCount = 0;
+            bootLines.forEach((line) => {
+                setTimeout(() => {
+                    typeLine(line.text, () => {
+                        doneCount += 1;
+                        updateProgress((doneCount / bootLines.length) * 100);
+                        if (doneCount >= bootLines.length) {
+                            const el = document.createElement('p');
+                            el.className = 'boot-line';
+                            el.textContent = '> init complete. system unlocked';
+                            bootBody.appendChild(el);
+                            finishBoot();
+                        }
+                    });
+                }, line.delay);
+            });
+        };
+
+        runBoot();
+
+        setTimeout(() => {
+            if (!bootLoader.classList.contains('hidden')) {
+                bootLoader.classList.add('hidden');
+                bootLoader.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        }, 20000);
+
+        const siteNav = document.querySelector('.site-nav');
+        const updateNav = () => siteNav.classList.toggle('scrolled', window.scrollY > 20);
+        updateNav();
+        window.addEventListener('scroll', updateNav, { passive: true });
 
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.querySelector('.nav-links');
