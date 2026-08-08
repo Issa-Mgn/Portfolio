@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issa MIGAN | Developer Portfolio</title>
     <meta name="description" content="Portfolio de Issa MIGAN, developpeur web et mobile specialise React Native, React, Node.js et produits digitaux.">
-    <link rel="icon" type="image/jpeg" href="image/profil.jpeg">
-    <link rel="apple-touch-icon" href="image/profil.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +26,7 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">Profil</a></li>
-                <li><a href="#skills">Stacks</a></li>
+                <li><a href="#skills">Stack</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -44,6 +42,7 @@
         <section id="home" class="hero section-panel">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
+
                     <h1>
                         Issa MIGAN
                         <span class="glitch" data-text="builds useful interfaces.">Builds useful interfaces.</span>
@@ -60,6 +59,21 @@
                         </div>
                         <p><span>$</span> available --for freelance --remote --benin</p>
                         <p><span>&gt;</span> focus: React Native, React, Node.js, Supabase</p>
+                    </div>
+                    <div class="hacker-console" id="hackerConsole">
+                        <div class="terminal-top">
+                            <span></span><span></span><span></span>
+                            <strong>quick.shell</strong>
+                        </div>
+                        <div class="console-output" id="consoleOutput" aria-live="polite">
+                            <p><span>issa@portfolio:~$</span> help</p>
+                            <p>commands: projects, apps, contact, github, whatsapp, copy-email, clear</p>
+                        </div>
+                        <form class="console-form" id="consoleForm">
+                            <label for="consoleCommand">issa@portfolio:~$</label>
+                            <input id="consoleCommand" name="command" type="text" autocomplete="off" placeholder="Tape une commande...">
+                            <button type="submit" aria-label="Executer la commande"><i data-lucide="corner-down-left"></i></button>
+                        </form>
                     </div>
                     <div class="cta-group">
                         <a href="#projects" class="btn btn-primary"><i data-lucide="folder-code"></i> Voir les projets</a>
@@ -150,7 +164,7 @@
                         <p class="eyebrow">/featured-work</p>
                         <h2>Projets & apps</h2>
                     </div>
-                    <p>Anciens projets, applications mobiles et autres projets disponibles sur GitHub.</p>
+                    <p>Anciens projets, applications mobiles et prochains produits disponibles sur GitHub.</p>
                 </div>
 
                 <div class="featured-grid">
@@ -309,7 +323,7 @@
                         </div>
 
                         <a class="show-more-btn github-projects" href="https://github.com/Issa-Mgn" target="_blank" rel="noopener noreferrer">
-                            <i data-lucide="github"></i> Plein d'autres projets disponibles sur GitHub
+                            <i data-lucide="github"></i> Plein d'autres prochains projets disponibles sur GitHub
                         </a>
                     </div>
                 </div>
@@ -376,6 +390,8 @@
         </div>
     </div>
 
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <script>
         lucide.createIcons();
 
@@ -388,6 +404,10 @@
         const appModalImage = document.getElementById('appModalImage');
         const appModalTitle = document.getElementById('appModalTitle');
         const appModalDescription = document.getElementById('appModalDescription');
+        const consoleForm = document.getElementById('consoleForm');
+        const consoleCommand = document.getElementById('consoleCommand');
+        const consoleOutput = document.getElementById('consoleOutput');
+        const toast = document.getElementById('toast');
 
         menuBtn.addEventListener('click', () => {
             const isOpen = navLinks.classList.toggle('active');
@@ -451,6 +471,89 @@
             if (event.key === 'Escape' && appModal.classList.contains('active')) {
                 closeAppModal();
             }
+        });
+
+        const showToast = (message) => {
+            toast.textContent = message;
+            toast.classList.add('active');
+            window.clearTimeout(showToast.timer);
+            showToast.timer = window.setTimeout(() => toast.classList.remove('active'), 2400);
+        };
+
+        const addConsoleLine = (text, isPrompt = false) => {
+            const line = document.createElement('p');
+            if (isPrompt) {
+                const prompt = document.createElement('span');
+                prompt.textContent = 'issa@portfolio:~$';
+                line.append(prompt, ` ${text}`);
+            } else {
+                line.textContent = text;
+            }
+            consoleOutput.appendChild(line);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        };
+
+        const copyEmail = async () => {
+            const email = 'miganissa334@gmail.com';
+            try {
+                await navigator.clipboard.writeText(email);
+                showToast('Email copie');
+                addConsoleLine('email copied -> clipboard');
+            } catch (error) {
+                showToast(email);
+                addConsoleLine(`email -> ${email}`);
+            }
+        };
+
+        const runConsoleCommand = (rawCommand) => {
+            const command = rawCommand.trim().toLowerCase();
+            if (!command) return;
+
+            addConsoleLine(command, true);
+
+            const actions = {
+                help: () => addConsoleLine('commands: projects, apps, contact, github, whatsapp, copy-email, clear'),
+                projects: () => {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                    addConsoleLine('routing -> #projects');
+                },
+                apps: () => {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                    if (archiveProjects && !archiveProjects.classList.contains('active')) {
+                        showMoreBtn.click();
+                    }
+                    addConsoleLine('opening archive -> apps');
+                },
+                contact: () => {
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                    addConsoleLine('routing -> #contact');
+                },
+                github: () => {
+                    window.open('https://github.com/Issa-Mgn', '_blank', 'noopener,noreferrer');
+                    addConsoleLine('opening -> github');
+                },
+                whatsapp: () => {
+                    window.location.href = 'https://wa.me/2290156103458';
+                    addConsoleLine('opening -> whatsapp');
+                },
+                'copy-email': copyEmail,
+                clear: () => {
+                    consoleOutput.innerHTML = '';
+                    addConsoleLine('console cleared');
+                }
+            };
+
+            if (actions[command]) {
+                actions[command]();
+            } else {
+                addConsoleLine(`unknown command: ${command}`);
+            }
+        };
+
+        consoleForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            runConsoleCommand(consoleCommand.value);
+            consoleCommand.value = '';
         });
 
         contactForm.addEventListener('submit', (event) => {

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issa MIGAN | Développeur Web & Mobile</title>
+    <meta name="description" content="Portfolio de Issa MIGAN, Étudiant en 2e année et Développeur Web & Mobile spécialisé en React Native.">
+    
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Decor -->
+    <div class="blob-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Issa<span>.</span>dev</div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" id="menuBtn">
+               <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="badge">Disponible pour des projets</h2>
+                    <h1>Issa <span>MIGAN</span></h1>
+                    <p class="role">Développeur Web et Mobile <span>(spécialisé en React Native)</span></p>
+                    <p class="description">
+                        Étudiant en 2e année d'université passionné par la conception d'applications multiplateformes performantes.
+                    </p>
+                    <div class="cta-group">
+                        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="image/WhatsApp Image 2025-05-04 à 17.01.30_77687495.jpg" alt="Issa MIGAN" id="profileImg">
+                    </div>
+                    <div class="floating-card c1">
+                        <i data-lucide="smartphone"></i>
+                        <span>React Native</span>
+                    </div>
+                    <div class="floating-card c2">
+                        <i data-lucide="code-2"></i>
+                        <span>JavaScript/TS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Je conçois des applications multiplateformes avec <strong>JavaScript/TypeScript</strong>, intégration d'API REST, authentification et stockage local (SQLite). Je suis à l'aise avec l'écosystème <strong>React Native/Expo</strong>, <strong>React</strong>, et le backend avec <strong>Node.js/Express</strong>.</p>
+                        <p>Actuellement en 2e année d'université, mon parcours académique est centré sur le génie logiciel et les structures de données.</p>
+                        
+                        <div class="education-info">
+                            <h3>Formation</h3>
+                            <div class="edu-item">
+                                <span class="year">PRÉSENT</span>
+                                <div class="edu-details">
+                                    <h4>Développement et Réseaux informatiques</h4>
+                                    <p>ECOLE NATIONALE D'ECONOMIE APPLICUE ET DE MANAGEMENT, Cotonou</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="objectives-info">
+                            <h3>Objectifs & Valeurs</h3>
+                            <ul class="obj-list">
+                                <li><strong>Produit :</strong> Compréhension du besoin, prototypage rapide.</li>
+                                <li><strong>Qualité :</strong> Code propre, revues via Git/GitHub.</li>
+                                <li><strong>Mobile :</strong> Optimisation des listes et gestion d'état fine.</li>
+                                <li><strong>UX/UI :</strong> Composants réutilisables, design accessible.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-details-side">
+                        <div class="courses-box">
+                            <h3>Cours clés</h3>
+                            <div class="course-tags">
+                                <span>Algorithmique</span>
+                                <span>Structures de données</span>
+                                <span>Bases de données</span>
+                                <span>Génie logiciel</span>
+                                <span>UX/UI</span>
+                                <span>Réseaux</span>
+                            </div>
+                        </div>
+                        
+                        <div class="languages-box">
+                            <h3>Langues</h3>
+                            <div class="lang-item">
+                                <span>Français</span>
+                                <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                            </div>
+                            <div class="lang-item">
+                                <span>Anglais</span>
+                                <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+                            </div>
+                            <div class="lang-item">
+                                <span>Fon</span>
+                                <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="interests-box">
+                            <h3>Centres d'intérêt</h3>
+                            <p><i data-lucide="music"></i> Écouter de la musique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i data-lucide="layers"></i>
+                        <h3>Frontend</h3>
+                        <p>React Native, React, Expo, HTML, CSS, JavaScript, TypeScript</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="server"></i>
+                        <h3>Backend</h3>
+                        <p>Node.js, Express, API REST, Firebase Auth</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="database"></i>
+                        <h3>Bases de données</h3>
+                        <p>PostgreSQL, SQLite, Supabase</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="git-branch"></i>
+                        <h3>Outils</h3>
+                        <p>Git, GitHub, VS Code, Figma (UX/UI)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Mes Projets Concrétisés</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>VisiteLeMonde (VLM)</h3>
+                            <p>Site de voyages interactif pour découvrir le monde.</p>
+                            <span class="tag">Web</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Instant Message App</h3>
+                            <p>Application de messagerie instantanée en temps réel.</p>
+                            <span class="tag">Mobile</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>IG-Live (ENEAM)</h3>
+                            <p>Mini-Réseau social dédié aux étudiants de l'ENEAM.</p>
+                            <span class="tag">Mobile</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Marketplace</h3>
+                            <p>Application de e-commerce multi-vendeurs.</p>
+                            <span class="tag">Mobile / Web</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Le Focus</h3>
+                            <p>Site de publication d'articles journaliers.</p>
+                            <span class="tag">Web</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>DocFusion</h3>
+                            <p>Application de fusion et gestion de fichiers PDF.</p>
+                            <span class="tag">Outil</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>ToDoList</h3>
+                            <p>Application de suivi de tâches quotidienne.</p>
+                            <span class="tag">Productivité</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>BodyBloom</h3>
+                            <p>Application d'exercice à la maison et fitness.</p>
+                            <span class="tag">Santé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-info">
+                        <h2 class="section-title">On travaille ensemble ?</h2>
+                        <p>N'hésitez pas à me contacter pour toute collaboration ou opportunité.</p>
+                        <ul class="contact-list">
+                            <li><i data-lucide="map-pin"></i> Cotonou, Bénin</li>
+                            <li><i data-lucide="phone"></i> +229 0156103458</li>
+                            <li><i data-lucide="mail"></i> miganissa334@gmail.com</li>
+                            <li><i data-lucide="calendar"></i> Né le 13/09/2006</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://github.com/Issa-Mgn"><ion-icon name="logo-github"></ion-icon></a>
+                            <a href="https://www.linkedin.com/in/issa-migan-520051362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><ion-icon name="logo-linkedin"></ion-icon>
+                            <a href="https://www.facebook.com/profile.php?id=61584308804677"><ion-icon name="logo-facebook"></ion-icon></a>
+                            <a href="https://www.instagram.com/issamigan?igsh=bjI5cnRxc3IwNWpy" target="_blank"><ion-icon name="logo-instagram"></ion-icon>
+</a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nom complet" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Votre message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Issa MIGAN. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issa MIGAN | Developer Portfolio</title>
     <meta name="description" content="Portfolio de Issa MIGAN, developpeur web et mobile specialise React Native, React, Node.js et produits digitaux.">
-    <link rel="icon" type="image/jpeg" href="image/profil.jpeg">
-    <link rel="apple-touch-icon" href="image/profil.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -24,18 +22,16 @@
     <nav class="site-nav">
         <div class="nav-container">
             <a class="logo" href="#home" aria-label="Retour a l'accueil">
-                <span class="prompt"></span> Issa.dev
+                <span class="prompt">&gt;</span> ssa.dev
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">Profil</a></li>
-                <li><a href="#skills">Stacks</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#about">profil</a></li>
+                <li><a href="#skills">stack</a></li>
+                <li><a href="#projects">projets</a></li>
+                <li><a href="#contact">contact</a></li>
             </ul>
-            <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu">
+                <i data-lucide="menu"></i>
             </button>
         </div>
     </nav>
@@ -44,9 +40,10 @@
         <section id="home" class="hero section-panel">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
+                    <p class="eyebrow">/portfolio/2026</p>
                     <h1>
                         Issa MIGAN
-                        <span class="glitch" data-text="builds useful interfaces.">Builds useful interfaces.</span>
+                        <span class="glitch" data-text="builds useful interfaces.">builds useful interfaces.</span>
                     </h1>
                     <p class="role">Developpeur Web & Mobile, specialise React Native.</p>
                     <p class="description">
@@ -69,7 +66,7 @@
 
                 <div class="hero-visual reveal">
                     <div class="profile-shell">
-                        <img src="image/profil.jpeg" alt="Portrait de Issa MIGAN">
+                        <img src="image/WhatsApp Image 2025-05-04 à 17.01.30_77687495.jpg" alt="Portrait de Issa MIGAN">
                         <div class="scan"></div>
                     </div>
                     <div class="floating-chip chip-one"><i data-lucide="smartphone"></i> Mobile first</div>
@@ -148,9 +145,9 @@
                 <div class="projects-head reveal">
                     <div class="section-heading">
                         <p class="eyebrow">/featured-work</p>
-                        <h2>Projets & apps</h2>
+                        <h2>Projets en avant</h2>
                     </div>
-                    <p>Anciens projets, applications mobiles et autres projets disponibles sur GitHub.</p>
+                    <p>Trois produits recents, mis en vitrine avec leurs vraies captures et liens directs.</p>
                 </div>
 
                 <div class="featured-grid">
@@ -188,12 +185,12 @@
 
                     <article class="featured-card reveal">
                         <a href="https://generate-my-cv.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-image">
-                            <img src="image/generatemycv.png" alt="Capture du projet GenerateMyCV">
+                            <img src="image/generatemycv.png" alt="Capture du projet GenerateMyCv">
                         </a>
                         <div class="project-body">
                             <div>
                                 <span class="tag accent-blue">Productivite</span>
-                                <h3>GenerateMyCV</h3>
+                                <h3>GenerateMyCv</h3>
                             </div>
                             <p>Generateur de CV en ligne pour composer un document propre sans perdre de temps sur la mise en page.</p>
                             <a class="project-link" href="https://generate-my-cv.netlify.app/" target="_blank" rel="noopener noreferrer">
@@ -205,112 +202,17 @@
 
                 <div class="more-projects reveal">
                     <button class="show-more-btn" id="showMoreProjects" type="button">
-                        <i data-lucide="plus"></i> Voir les anciens projets
+                        <i data-lucide="plus"></i> Voir plus d'anciens projets
                     </button>
-
                     <div class="archive-grid" id="archiveProjects">
-                        <div class="archive-section">
-                            <div class="archive-title">
-                                <span>Sites</span>
-                                <h3>Anciens sites web</h3>
-                            </div>
-                            <div class="archive-list">
-                                <article class="featured-card">
-                                    <a href="https://educ-me.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-image">
-                                        <img src="image/educme.png" alt="Capture du projet EducMe">
-                                    </a>
-                                    <div class="project-body">
-                                        <div><span class="tag">Education</span><h3>EducMe</h3></div>
-                                        <p>Plateforme educative pensee pour faciliter l'apprentissage.</p>
-                                        <a class="project-link" href="https://educ-me.netlify.app/" target="_blank" rel="noopener noreferrer">Ouvrir <i data-lucide="arrow-up-right"></i></a>
-                                    </div>
-                                </article>
-
-                                <article class="featured-card">
-                                    <a href="https://lefocusinfos.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-image">
-                                        <img src="image/lefocus.png" alt="Capture du projet Le Focus">
-                                    </a>
-                                    <div class="project-body">
-                                        <div><span class="tag accent-green">Media</span><h3>Le Focus</h3></div>
-                                        <p>Site de publication d'articles et d'informations.</p>
-                                        <a class="project-link" href="https://lefocusinfos.netlify.app/" target="_blank" rel="noopener noreferrer">Ouvrir <i data-lucide="arrow-up-right"></i></a>
-                                    </div>
-                                </article>
-
-                                <article class="featured-card">
-                                    <a href="https://shop-eat.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-image">
-                                        <img src="image/shop-eat.png" alt="Capture du projet Shop'n eat">
-                                    </a>
-                                    <div class="project-body">
-                                        <div><span class="tag accent-blue">Food</span><h3>Shop'n eat</h3></div>
-                                        <p>Experience web orientee restauration et achat.</p>
-                                        <a class="project-link" href="https://shop-eat.netlify.app/" target="_blank" rel="noopener noreferrer">Ouvrir <i data-lucide="arrow-up-right"></i></a>
-                                    </div>
-                                </article>
-
-                                <article class="featured-card">
-                                    <a href="https://vitiligocommunity.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-image">
-                                        <img src="image/vitiligocommunity.png" alt="Capture du projet VitiligoCommunity">
-                                    </a>
-                                    <div class="project-body">
-                                        <div><span class="tag">Community</span><h3>VitiligoCommunity</h3></div>
-                                        <p>Plateforme communautaire autour du vitiligo.</p>
-                                        <a class="project-link" href="https://vitiligocommunity.netlify.app/" target="_blank" rel="noopener noreferrer">Ouvrir <i data-lucide="arrow-up-right"></i></a>
-                                    </div>
-                                </article>
-
-                                <article class="featured-card">
-                                    <a href="https://actionverite.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-image">
-                                        <img src="image/actionverite.png" alt="Capture du projet Action/Vérité">
-                                    </a>
-                                    <div class="project-body">
-                                        <div><span class="tag accent-green">Game</span><h3>Action/Vérité</h3></div>
-                                        <p>Jeu web convivial pour lancer des actions et verites.</p>
-                                        <a class="project-link" href="https://actionverite.netlify.app/" target="_blank" rel="noopener noreferrer">Ouvrir <i data-lucide="arrow-up-right"></i></a>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-
-                        <div class="archive-section">
-                            <div class="archive-title">
-                                <span>Apps</span>
-                                <h3>Applications mobiles</h3>
-                            </div>
-                            <div class="archive-list">
-                                <article class="featured-card app-card">
-                                    <button class="app-preview-btn" type="button" data-title="BodyBloom" data-image="image/bodybloom.jpeg" data-description="Application fitness pour suivre des exercices a la maison, garder un rythme regulier et progresser simplement.">
-                                        <div class="project-image app-logo-image"><img src="image/bodybloom_logo.jpeg" alt="Logo BodyBloom"></div>
-                                        <div class="project-body"><div><span class="tag accent-blue">Mobile app</span><h3>BodyBloom</h3></div><span class="app-hint">Voir l'image</span></div>
-                                    </button>
-                                </article>
-
-                                <article class="featured-card app-card">
-                                    <button class="app-preview-btn" type="button" data-title="DocFusion" data-image="image/docfusion.jpeg" data-description="Application de gestion et fusion de documents PDF pour manipuler rapidement des fichiers depuis mobile.">
-                                        <div class="project-image app-logo-image"><img src="image/docfusion_logo.jpeg" alt="Logo DocFusion"></div>
-                                        <div class="project-body"><div><span class="tag">Mobile app</span><h3>DocFusion</h3></div><span class="app-hint">Voir l'image</span></div>
-                                    </button>
-                                </article>
-
-                                <article class="featured-card app-card">
-                                    <button class="app-preview-btn" type="button" data-title="YouAndMe" data-image="image/youandme.jpeg" data-description="Application sociale pour creer des connexions simples, directes et plus personnelles.">
-                                        <div class="project-image app-logo-image"><img src="image/youandme_logo.png" alt="Logo YouAndMe"></div>
-                                        <div class="project-body"><div><span class="tag accent-green">Mobile app</span><h3>YouAndMe</h3></div><span class="app-hint">Voir l'image</span></div>
-                                    </button>
-                                </article>
-
-                                <article class="featured-card app-card">
-                                    <button class="app-preview-btn" type="button" data-title="IG-Live" data-image="image/iglive.jpeg" data-description="Mini reseau social concu pour les etudiants, avec une experience rapide et communautaire.">
-                                        <div class="project-image app-logo-image"><img src="image/iglive_logo.png" alt="Logo IG-Live"></div>
-                                        <div class="project-body"><div><span class="tag accent-blue">Mobile app</span><h3>IG-Live</h3></div><span class="app-hint">Voir l'image</span></div>
-                                    </button>
-                                </article>
-                            </div>
-                        </div>
-
-                        <a class="show-more-btn github-projects" href="https://github.com/Issa-Mgn" target="_blank" rel="noopener noreferrer">
-                            <i data-lucide="github"></i> Plein d'autres projets disponibles sur GitHub
-                        </a>
+                        <article><span>01</span><h3>VisiteLeMonde</h3><p>Site de voyages interactif pour decouvrir le monde.</p></article>
+                        <article><span>02</span><h3>Instant Message App</h3><p>Application de messagerie instantanee en temps reel.</p></article>
+                        <article><span>03</span><h3>IG-Live</h3><p>Mini reseau social dedie aux etudiants de l'ENEAM.</p></article>
+                        <article><span>04</span><h3>Marketplace</h3><p>Application e-commerce multi-vendeurs.</p></article>
+                        <article><span>05</span><h3>Le Focus</h3><p>Site de publication d'articles journaliers.</p></article>
+                        <article><span>06</span><h3>DocFusion</h3><p>Application de fusion et gestion de fichiers PDF.</p></article>
+                        <article><span>07</span><h3>ToDoList</h3><p>Application de suivi de taches quotidienne.</p></article>
+                        <article><span>08</span><h3>BodyBloom</h3><p>Application d'exercices a la maison et fitness.</p></article>
                     </div>
                 </div>
             </div>
@@ -326,14 +228,12 @@
                         <li><i data-lucide="map-pin"></i> Cotonou, Benin</li>
                         <li><i data-lucide="phone"></i> <a href="tel:+2290156103458">+229 0156103458</a></li>
                         <li><i data-lucide="mail"></i> <a href="mailto:miganissa334@gmail.com">miganissa334@gmail.com</a></li>
-                        <li><i data-lucide="message-circle"></i> <a href="#contactForm">WhatsApp Messenger</a></li>
                     </ul>
                     <div class="social-links">
                         <a href="https://github.com/Issa-Mgn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
                         <a href="https://www.linkedin.com/in/issa-migan-520051362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
                         <a href="https://www.facebook.com/profile.php?id=61584308804677" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
                         <a href="https://www.instagram.com/issamigan?igsh=bjI5cnRxc3IwNWpy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
-                        <a href="#contactForm" aria-label="WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
@@ -349,7 +249,7 @@
                         <span>Message</span>
                         <textarea name="message" rows="5" placeholder="Parlez-moi du projet..." required></textarea>
                     </label>
-                    <button class="btn btn-primary" type="submit"><i data-lucide="message-circle"></i> Envoyer sur WhatsApp</button>
+                    <button class="btn btn-primary" type="submit"><i data-lucide="mail"></i> Envoyer</button>
                 </form>
             </div>
         </section>
@@ -361,21 +261,6 @@
         </div>
     </footer>
 
-    <div class="app-modal" id="appModal" aria-hidden="true">
-        <div class="app-modal-backdrop" data-close-modal></div>
-        <div class="app-modal-panel" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
-            <button class="app-modal-close" type="button" aria-label="Fermer" data-close-modal>
-                <i data-lucide="x"></i>
-            </button>
-            <img id="appModalImage" src="" alt="">
-            <div class="app-modal-content">
-                <span class="tag accent-blue">Apercu app</span>
-                <h3 id="appModalTitle"></h3>
-                <p id="appModalDescription"></p>
-            </div>
-        </div>
-    </div>
-
     <script>
         lucide.createIcons();
 
@@ -384,36 +269,23 @@
         const showMoreBtn = document.getElementById('showMoreProjects');
         const archiveProjects = document.getElementById('archiveProjects');
         const contactForm = document.getElementById('contactForm');
-        const appModal = document.getElementById('appModal');
-        const appModalImage = document.getElementById('appModalImage');
-        const appModalTitle = document.getElementById('appModalTitle');
-        const appModalDescription = document.getElementById('appModalDescription');
 
         menuBtn.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('active');
-            menuBtn.classList.toggle('active', isOpen);
-            menuBtn.setAttribute('aria-expanded', String(isOpen));
-            menuBtn.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
         });
 
         document.querySelectorAll('.nav-links a').forEach((link) => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuBtn.classList.remove('active');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.setAttribute('aria-label', 'Ouvrir le menu');
-            });
-           });
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
 
-        if (showMoreBtn && archiveProjects) {
-            showMoreBtn.addEventListener('click', () => {
-                const isOpen = archiveProjects.classList.toggle('active');
-                showMoreBtn.innerHTML = isOpen
-                    ? '<i data-lucide="minus"></i> Masquer les anciens projets'
-                    : "<i data-lucide=\"plus\"></i> Voir plus d'anciens projets";
-                lucide.createIcons();
-            });
-        }
+        showMoreBtn.addEventListener('click', () => {
+            const isOpen = archiveProjects.classList.toggle('active');
+            showMoreBtn.innerHTML = isOpen
+                ? '<i data-lucide="minus"></i> Masquer les anciens projets'
+                : "<i data-lucide=\"plus\"></i> Voir plus d'anciens projets";
+            lucide.createIcons();
+        });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -425,41 +297,14 @@
 
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        const closeAppModal = () => {
-            appModal.classList.remove('active');
-            appModal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
-        };
-
-        document.querySelectorAll('.app-preview-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                appModalImage.src = button.dataset.image;
-                appModalImage.alt = `Apercu de ${button.dataset.title}`;
-                appModalTitle.textContent = button.dataset.title;
-                appModalDescription.textContent = button.dataset.description;
-                appModal.classList.add('active');
-                appModal.setAttribute('aria-hidden', 'false');
-                document.body.classList.add('modal-open');
-            });
-        });
-
-        document.querySelectorAll('[data-close-modal]').forEach((button) => {
-            button.addEventListener('click', closeAppModal);
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && appModal.classList.contains('active')) {
-                closeAppModal();
-            }
-        });
-
         contactForm.addEventListener('submit', (event) => {
             event.preventDefault();
             const data = new FormData(contactForm);
-            const text = encodeURIComponent(
+            const subject = encodeURIComponent('Nouveau message depuis le portfolio');
+            const body = encodeURIComponent(
                 `Nom: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`
             );
-            window.location.href = `https://wa.me/2290156103458?text=${text}`;
+            window.location.href = `mailto:miganissa334@gmail.com?subject=${subject}&body=${body}`;
         });
     </script>
 </body>
