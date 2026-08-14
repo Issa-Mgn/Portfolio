@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page introuvable | Issa MIGAN</title>
+    <meta name="description" content="Erreur 404 — la page demandee n'existe pas ou a ete deplacee.">
+    <link rel="icon" type="image/jpeg" href="image/profil.jpeg">
+    <link rel="apple-touch-icon" href="image/profil.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="error.css">
+</head>
+<body>
+    <script>
+        (function () {
+            var goOffline = function () {
+                if (!navigator.onLine && location.pathname.indexOf('500.html') === -1) {
+                    location.replace('500.html');
+                }
+            };
+            goOffline();
+            window.addEventListener('offline', goOffline);
+        })();
+    </script>
+    <nav class="error-nav" aria-label="Navigation">
+        <a class="logo" href="index.html" aria-label="Revenir a l'accueil">
+            <span class="prompt"></span> Issa.dev
+        </a>
+        <span class="error-nav-status"><span class="status-dot"></span> erreur 404</span>
+    </nav>
+
+    <main class="error-shell">
+        <section class="error-panel" role="alert" aria-labelledby="errorTitle">
+            <header class="error-panel-head">
+                <span></span><span></span><span></span>
+                <strong class="route">ssh://issa.dev/~/404</strong>
+                <strong>exit 404</strong>
+            </header>
+            <div class="error-body">
+                <p class="eyebrow">/system/router</p>
+                <span class="glitch error-giant" data-text="404">404</span>
+                <h1 class="error-title" id="errorTitle">Page introuvable</h1>
+                <p class="error-msg">Le dossier que tu cherches n'existe pas, a ete deplace ou l'adresse est mal ecrite. Verifie le lien, sinon retourne sur le terminal principal.</p>
+                <p class="error-cmd"><span class="dollar">$</span> ./issue=route_&lt;introuvable&gt;</p>
+                <p class="error-cmd err"><span class="dollar">&gt;</span> route_not_found -- returned 404</p>
+                <div class="error-actions">
+                    <a class="btn btn-primary" href="index.html">Revenir a l'accueil</a>
+                    <a class="btn btn-secondary" href="index.html#projects">Voir les projets</a>
+                </div>
+                <div class="error-footer-line">
+                    <span>exit code: 404</span>
+                    <span>essaie: ./index.html<span class="cursor"></span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

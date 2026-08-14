@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hors ligne — Connexion perdue | Issa MIGAN</title>
+    <meta name="description" content="Pas d'acces reseau — le portfolio d'Issa MIGAN est temporairement inaccessible.">
+    <link rel="icon" type="image/jpeg" href="image/profil.jpeg">
+    <link rel="apple-touch-icon" href="image/profil.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="error.css">
+</head>
+<body>
+    <nav class="error-nav offline" aria-label="Navigation">
+        <a class="logo" href="index.html" aria-label="Revenir a l'accueil">
+            <span class="prompt"></span> Issa.dev
+        </a>
+        <span class="error-nav-status"><span class="status-dot"></span> hors ligne</span>
+    </nav>
+
+    <main class="error-shell">
+        <section class="error-panel" role="alert" aria-labelledby="errorTitle">
+            <header class="error-panel-head">
+                <span></span><span></span><span></span>
+                <strong class="route">ssh://issa.dev/~/network</strong>
+                <strong>no signal</strong>
+            </header>
+            <div class="error-body">
+                <p class="eyebrow">/system/network</p>
+                <span class="glitch error-giant offline-giant" data-text="HORS LIGNE">HORS LIGNE</span>
+                <h1 class="error-title" id="errorTitle">Connexion perdue</h1>
+                <p class="error-msg">Aucune connexion detectee. Retablis ton acces reseau (wifi ou data), puis relance le ping : le projet est en ligne, il t'attend.</p>
+                <p class="error-cmd"><span class="dollar">$</span> ping issa.dev --wait 3</p>
+                <p class="error-cmd err"><span class="dollar">&gt;</span> request timed out -- no route to host</p>
+                <div class="error-actions">
+                    <button class="btn btn-primary" id="retryBtn" type="button">Reessayer la connexion</button>
+                    <a class="btn btn-secondary" href="index.html">Revenir a l'accueil</a>
+                </div>
+                <div class="error-footer-line">
+                    <span>network: <span id="netValue" class="err">checking...</span></span>
+                    <span>en attente du signal<span class="cursor"></span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const netValue = document.getElementById('netValue');
+        const retryBtn = document.getElementById('retryBtn');
+
+        const updateNet = () => {
+            if (navigator.onLine) {
+                netValue.textContent = 'reconnecte';
+                netValue.className = 'ok';
+            } else {
+                netValue.textContent = 'hors ligne';
+                netValue.className = 'err';
+            }
+        };
+
+        updateNet();
+        window.addEventListener('online', updateNet);
+        window.addEventListener('offline', updateNet);
+
+        retryBtn.addEventListener('click', () => {
+            retryBtn.textContent = 'verification...';
+            retryBtn.disabled = true;
+            setTimeout(() => window.location.reload(), 700);
+        });
+    </script>
+</body>
+</html>

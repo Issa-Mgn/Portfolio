@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 — Erreur serveur | Issa MIGAN</title>
+    <meta name="description" content="Erreur 500 — le serveur a rencontre un probleme interne.">
+    <link rel="icon" type="image/jpeg" href="image/profil.jpeg">
+    <link rel="apple-touch-icon" href="image/profil.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="error.css">
+</head>
+<body>
+    <nav class="error-nav" aria-label="Navigation">
+        <a class="logo" href="index.html" aria-label="Revenir a l'accueil">
+            <span class="prompt"></span> Issa.dev
+        </a>
+        <span class="error-nav-status"><span class="status-dot"></span> erreur serveur</span>
+    </nav>
+
+    <main class="error-shell">
+        <section class="error-panel" role="alert" aria-labelledby="errorTitle">
+            <header class="error-panel-head">
+                <span></span><span></span><span></span>
+                <strong class="route">ssh://issa.dev/~/500</strong>
+                <strong>exit 500</strong>
+            </header>
+            <div class="error-body">
+                <p class="eyebrow">/system/server</p>
+                <span class="glitch error-giant" data-text="500">500</span>
+                <h1 class="error-title" id="errorTitle">Erreur interne</h1>
+                <p class="error-msg">Le serveur a rencontre un probleme en traitant la requete. Ce n'est pas de ton cote : reessaie dans quelques instants ou retourne a l'accueil.</p>
+                <p class="error-cmd"><span class="dollar">$</span> npm run deploy:release</p>
+                <p class="error-cmd err"><span class="dollar">&gt;</span> process exited with code 1 -- internal_error</p>
+                <div class="error-actions">
+                    <a class="btn btn-primary" href="index.html">Revenir a l'accueil</a>
+                    <button class="btn btn-secondary" id="retryBtn" type="button">Reessayer</button>
+                    <a class="btn btn-secondary" href="index.html#contact">Me contacter</a>
+                </div>
+                <div class="error-footer-line">
+                    <span>exit code: 500</span>
+                    <span>network: <span id="netValue" class="err">hors ligne</span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        var netValue = document.getElementById('netValue');
+        var retryBtn = document.getElementById('retryBtn');
+
+        var updateNet = function () {
+            if (navigator.onLine) {
+                netValue.textContent = 'reconnecte';
+                netValue.className = 'ok';
+            } else {
+                netValue.textContent = 'hors ligne';
+                netValue.className = 'err';
+            }
+        };
+
+        window.addEventListener('offline', updateNet);
+        window.addEventListener('online', function () {
+            updateNet();
+            setTimeout(function () { window.location.replace('index.html'); }, 600);
+        });
+
+        retryBtn.addEventListener('click', function () {
+            if (navigator.onLine) {
+                window.location.replace('index.html');
+            } else {
+                retryBtn.textContent = 'toujours hors ligne...';
+            }
+        });
+    </script>
+</body>
+</html>
